@@ -8,18 +8,21 @@ module.exports = {
     },
     module: {
         loaders: [
-     {
-      test: /\.js$/,
-      exclude: /(node_modules|bower_components)/,
-      loader: 'babel', // 'babel-loader' is also a valid name to reference
-      query: {
-        presets: ['es2015','react']
-      }
-    },           { test: /\.scss$/, loaders: ["style", "css", "sass"] }
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel', // 'babel-loader' is also a valid name to reference
+                query: {
+                    presets: ['es2015','react']
+                }
+            },
+            { test: /\.scss$/, loaders: ["style", "css", "sass"] },
+            { test: /\.pug$/, loader: 'pug'}
         ]
     },
     plugins: [new HtmlWebpackPlugin({
         title: 'helloWorld',
-        template: './src/index.ejs' 
+        loader: 'pug',
+        template: './src/index.pug' 
     })]
 };

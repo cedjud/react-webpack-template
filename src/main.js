@@ -1,9 +1,13 @@
-require('./scss/style.scss');
- //main.js
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+// Import router.
+var Router = require('./app/router.js');
+
 ReactDOM.render(
-<h1>Hello, world!</h1>,
- document.getElementById('root')
+    Router,
+    document.getElementById('root')
 );
+
+// Require sass entry file.
+require('./scss/style.scss');
